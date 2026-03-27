@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Von Ridens German Shepherds </title>
+<link rel="icon" type="text/x-icon" href="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=800&q=85">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --gold: #B8966E;
+    --gold-light: #D4B896;
+    --gold-dark: #8A6A44;
+    --cream: #FAF7F2;
+    --charcoal: #1A1A18;
+    --warm-gray: #6B6560;
+    --border: rgba(184,150,110,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  .font-display { font-family: 'Cormorant Garamond', serif; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+  /* ── Nav ── */
+  #navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    transition: all 0.4s ease;
+    padding: 1.5rem 0;
+  }
+  #navbar.scrolled {
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(12px);
+    padding: 1rem 0;
+    box-shadow: 0 1px 0 var(--border);
+  }
+  .nav-link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover { color: var(--gold-dark); }
+  .nav-link:hover::after { width: 100%; }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--gold);
+    color: white;
+    padding: 0.85rem 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    border: none; cursor: pointer;
+    transition: all 0.35s ease;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    background: var(--gold-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(138,106,68,0.3);
+  }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 0.85rem 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    border: 1px solid rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    text-decoration: none;
+  }
+  .btn-outline:hover {
+    border-color: white;
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* ── Section headings ── */
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--gold-dark); }
+
+  /* ── Hero ── */
+  #hero {
+    height: 100vh; min-height: 700px;
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=1800&q=85') center/cover no-repeat;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg, rgba(15,13,10,0.75) 0%, rgba(15,13,10,0.4) 60%, transparent 100%);
+  }
+  .hero-content { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 1rem;
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold-light);
+    display: block;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: white;
+    margin-bottom: 1.75rem;
+  }
+  .hero-title strong {
+    font-weight: 600;
+    display: block;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    display: flex; gap: 2.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.3rem;
+  }
+
+  /* Scroll cue */
+  .scroll-cue {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    z-index: 2;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(0.6); opacity: 0.5; }
+    50% { transform: scaleY(1); opacity: 1; }
+  }
+
+  /* ── About ── */
+  #about { background: white; }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem; right: -1.5rem;
+    width: 60%; height: 60%;
+    border: 1px solid var(--border);
+    z-index: 0;
+  }
+  .about-img-wrap img {
+    position: relative; z-index: 1;
+    width: 100%; aspect-ratio: 4/5; object-fit: cover;
+  }
+  .about-badge {
+    position: absolute;
+    top: 2rem; left: -1.5rem;
+    background: var(--gold);
+    color: white;
+    padding: 1.25rem 1.5rem;
+    z-index: 2;
+  }
+  .badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .badge-text {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  /* ── Puppies ── */
+  #puppies { background: var(--cream); }
+  .puppy-card {
+    background: white;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+  }
+  .puppy-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  }
+  .puppy-img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .puppy-card:hover .puppy-img { transform: scale(1.04); }
+  .puppy-status {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .status-available { background: #E8F5E9; color: #2E7D32; }
+  .status-reserved { background: #FFF8E1; color: #F57F17; }
+  .status-coming { background: #E3F2FD; color: #1565C0; }
+
+  /* ── Why Us ── */
+  #why { background: var(--charcoal); color: white; }
+  .why-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.5rem;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .why-card:hover { border-color: rgba(184,150,110,0.3); background: rgba(255,255,255,0.03); }
+  .why-card:hover::before { transform: scaleX(1); }
+  .why-icon {
+    width: 48px; height: 48px;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+  }
+  .why-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: white;
+  }
+  .why-desc { font-size: 0.9rem; line-height: 1.75; color: rgba(255,255,255,0.55); }
+
+  /* ── Testimonials ── */
+  #testimonials { background: white; }
+  .testimonial-card {
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    position: relative;
+    transition: box-shadow 0.3s;
+  }
+  .testimonial-card:hover { box-shadow: 0 12px 40px rgba(184,150,110,0.1); }
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    line-height: 0.5;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .stars { color: var(--gold); letter-spacing: 0.1em; }
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    margin: 1rem 0 1.5rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+  }
+  .reviewer-name {
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .reviewer-loc { font-size: 0.8rem; color: var(--warm-gray); }
+  .reviewer-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--gold-light);
+  }
+
+  /* ── Gallery ── */
+  #gallery { background: var(--cream); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 220px);
+    gap: 8px;
+  }
+  .g1 { grid-column: 1/6; grid-row: 1/3; }
+  .g2 { grid-column: 6/9; grid-row: 1/2; }
+  .g3 { grid-column: 9/13; grid-row: 1/3; }
+  .g4 { grid-column: 6/9; grid-row: 2/3; }
+  .g5 { grid-column: 1/5; grid-row: 3/4; }
+  .g6 { grid-column: 5/9; grid-row: 3/4; }
+  .g7 { grid-column: 9/13; grid-row: 3/4; }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .gallery-item:hover img { transform: scale(1.08); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: rgba(184,150,110,0); 
+    transition: background 0.4s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .gallery-item:hover .gallery-overlay { background: rgba(184,150,110,0.25); }
+
+  /* ── Contact ── */
+  #contact { background: var(--charcoal); }
+  .contact-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: white;
+    padding: 0.9rem 1.2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+    outline: none;
+  }
+  .contact-input:focus { border-color: var(--gold); }
+  .contact-input::placeholder { color: rgba(255,255,255,0.3); }
+  .contact-input option { background: var(--charcoal); }
+  .contact-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Footer ── */
+  footer { background: #111110; color: rgba(255,255,255,0.4); }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: white;
+  }
+  .footer-link {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.3s;
+  }
+  .footer-link:hover { color: var(--gold-light); }
+
+  /* ── Animations ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── Mobile menu ── */
+  #mobile-menu {
+    position: fixed; inset: 0;
+    background: var(--charcoal);
+    z-index: 200;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  #mobile-menu.open { display: flex; }
+  .mobile-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .mobile-link:hover { color: var(--gold-light); }
+
+  /* ── Gold divider ── */
+  .gold-divider {
+    display: flex; align-items: center; gap: 1rem;
+    color: var(--gold);
+  }
+  .gold-divider::before, .gold-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .g1, .g2, .g3, .g4, .g5, .g6, .g7 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .g1 { grid-column: 1/3; }
+    .gallery-grid > div { height: 180px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ NAV ══════════════════ -->
+<nav id="navbar">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="footer-logo text-xl tracking-wide" style="font-family:'Cormorant Garamond',serif;color:white;" id="nav-logo">
+      Von Ridens
+      <span style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;font-family:'Jost',sans-serif;display:block;font-weight:400;opacity:0.7;margin-top:1px;">German Shepherds</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-8" id="nav-links" style="color:white;">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#puppies" class="nav-link">Puppies</a>
+      <a href="#why" class="nav-link">Our Promise</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="btn-primary" style="padding:0.65rem 1.5rem;font-size:0.7rem;">Inquire Now</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer" style="background:none;border:none;padding:0.25rem;">
+      <span class="block w-6 h-px bg-white transition-all" id="h1"></span>
+      <span class="block w-4 h-px bg-white transition-all ml-auto" id="h2"></span>
+      <span class="block w-6 h-px bg-white transition-all" id="h3"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu">
+  <button id="close-menu" style="position:absolute;top:2rem;right:2rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="#about" class="mobile-link" onclick="closeMobileMenu()">About</a>
+  <a href="#puppies" class="mobile-link" onclick="closeMobileMenu()">Puppies</a>
+  <a href="#why" class="mobile-link" onclick="closeMobileMenu()">Our Promise</a>
+  <a href="#gallery" class="mobile-link" onclick="closeMobileMenu()">Gallery</a>
+  <a href="#contact" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full hero-content">
+    <div class="max-w-2xl">
+      <div class="hero-eyebrow">Port Orchard, Washington · Est. 1998</div>
+
+      <h1 class="hero-title">
+        Exceptional <em style="color:var(--gold-light);font-style:italic;">German Shepherds</em>
+        <strong>Bred for Life,<br>Raised with Love.</strong>
+      </h1>
+
+      <p class="hero-sub">
+        Champion bloodlines. Certified health. Unmatched temperament. 
+        We raise puppies that become your most loyal companion — 
+        and the best dog you've ever had.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#puppies" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          View Available Puppies
+        </a>
+        <a href="#about" class="btn-outline">Our Story</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">25+</div>
+          <div class="stat-label">Years Breeding</div>
+        </div>
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Happy Families</div>
+        </div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">OFA Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ ABOUT ══════════════════ -->
+<section id="about" style="padding: 7rem 0; background: white;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <!-- Image column -->
+      <div class="about-img-wrap reveal">
+        <div class="about-badge">
+          <div class="badge-num">25</div>
+          <div class="badge-text">Years of<br>Excellence</div>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=800&q=85" 
+          alt="German Shepherd portrait"
+          style="width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/5;"
+        >
+        <!-- Floating accent card -->
+        <div style="position:absolute;bottom:2.5rem;right:-2rem;background:var(--cream);border:1px solid var(--border);padding:1.25rem 1.5rem;min-width:180px;z-index:3;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+            <div style="color:var(--gold);">★★★★★</div>
+          </div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--charcoal);font-style:italic;">"Best breeder in the Pacific Northwest"</div>
+          <div style="font-size:0.7rem;color:var(--warm-gray);margin-top:0.3rem;letter-spacing:0.08em;">— Google Reviews</div>
+        </div>
+      </div>
+
+      <!-- Text column -->
+      <div class="reveal reveal-delay-2">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title" style="margin-bottom:1.75rem;">
+          More Than a Breeder — <em>A Lifelong Partner</em>
+        </h2>
+
+        <p style="color:var(--warm-gray);line-height:1.85;margin-bottom:1.25rem;font-size:0.95rem;">
+          As both a breeder and a professional dog trainer, my mission has always been simple: 
+          give you the best dog you've ever had. Von Ridens German Shepherds was founded 
+          on the belief that breeding excellence is about so much more than bloodlines.
+        </p>
+        <p style="color:var(--warm-gray);line-height:1.85;margin-bottom:2rem;font-size:0.95rem;">
+          Every puppy is home-raised with daily handling, gentle socialization, and the 
+          kind of early neurological stimulation that sets them up for a life of confidence 
+          and trainability. We breed for intelligence, beauty, and — above all — soul.
+        </p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;">
+          <div style="padding:1.25rem;border-left:2px solid var(--gold);background:var(--cream);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--charcoal);margin-bottom:0.25rem;">OFA Certified</div>
+            <div style="font-size:0.8rem;color:var(--warm-gray);">All hips, elbows & health cleared</div>
+          </div>
+          <div style="padding:1.25rem;border-left:2px solid var(--gold);background:var(--cream);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--charcoal);margin-bottom:0.25rem;">DM Clear</div>
+            <div style="font-size:0.8rem;color:var(--warm-gray);">Genetically tested bloodlines</div>
+          </div>
+          <div style="padding:1.25rem;border-left:2px solid var(--gold);background:var(--cream);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--charcoal);margin-bottom:0.25rem;">2-Year Guarantee</div>
+            <div style="font-size:0.8rem;color:var(--warm-gray);">Comprehensive health warranty</div>
+          </div>
+          <div style="padding:1.25rem;border-left:2px solid var(--gold);background:var(--cream);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--charcoal);margin-bottom:0.25rem;">Titled Parents</div>
+            <div style="font-size:0.8rem;color:var(--warm-gray);">Champion working bloodlines</div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary" style="background:var(--charcoal);color:white;">
+          Meet the Breeder
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PUPPIES ══════════════════ -->
+<section id="puppies" style="padding: 7rem 0; background: var(--cream);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center reveal" style="margin-bottom:4rem;">
+      <div class="section-label">Currently Available</div>
+      <h2 class="section-title" style="margin-bottom:1rem;">Meet Our <em>Available Puppies</em></h2>
+      <p style="color:var(--warm-gray);max-width:520px;margin:0 auto;font-size:0.95rem;line-height:1.75;">
+        Each puppy is carefully matched to its forever home. Reserve your 
+        companion today — our litters place quickly.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="puppy-card reveal reveal-delay-1">
+        <div style="overflow:hidden;">
+          <img class="puppy-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Puppy Zeus">
+        </div>
+        <div style="padding:1.75rem;">
+          <div class="puppy-status status-available">Available</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;margin-bottom:0.4rem;">Zeus</h3>
+          <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;font-weight:500;margin-bottom:1rem;">Male · 8 Weeks · Black & Tan</div>
+          <p style="font-size:0.88rem;color:var(--warm-gray);line-height:1.7;margin-bottom:1.5rem;">
+            Confident and curious, Zeus has shown exceptional drive and social temperament. 
+            Ideal for an active family or working home.
+          </p>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:1.25rem;border-top:1px solid var(--border);">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;">$2,500</div>
+              <div style="font-size:0.7rem;color:var(--warm-gray);">Includes health package</div>
+            </div>
+            <a href="#contact" class="btn-primary" style="padding:0.65rem 1.25rem;font-size:0.7rem;">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="puppy-card reveal reveal-delay-2">
+        <div style="overflow:hidden;">
+          <img class="puppy-img" src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?w=600&q=80" alt="Puppy Luna">
+        </div>
+        <div style="padding:1.75rem;">
+          <div class="puppy-status status-available">Available</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;margin-bottom:0.4rem;">Luna</h3>
+          <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;font-weight:500;margin-bottom:1rem;">Female · 8 Weeks · Sable</div>
+          <p style="font-size:0.88rem;color:var(--warm-gray);line-height:1.7;margin-bottom:1.5rem;">
+            Luna is a gentle soul with remarkable focus. Her natural herding instinct 
+            and love of people make her a stunning companion.
+          </p>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:1.25rem;border-top:1px solid var(--border);">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;">$2,800</div>
+              <div style="font-size:0.7rem;color:var(--warm-gray);">Includes health package</div>
+            </div>
+            <a href="#contact" class="btn-primary" style="padding:0.65rem 1.25rem;font-size:0.7rem;">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="puppy-card reveal reveal-delay-3">
+        <div style="overflow:hidden;position:relative;">
+          <img class="puppy-img" src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600&q=80" alt="Upcoming Litter">
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;color:white;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;">Coming Soon</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:1.75rem;">
+          <div class="puppy-status status-coming">Coming Spring 2025</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;margin-bottom:0.4rem;">Next Litter</h3>
+          <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;font-weight:500;margin-bottom:1rem;">Expected April 2025 · 6–8 Pups</div>
+          <p style="font-size:0.88rem;color:var(--warm-gray);line-height:1.7;margin-bottom:1.5rem;">
+            Our spring litter from Champion parents. Both parents have OFA excellent 
+            ratings and multiple working titles. Reserve your spot now.
+          </p>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:1.25rem;border-top:1px solid var(--border);">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;">$500 Deposit</div>
+              <div style="font-size:0.7rem;color:var(--warm-gray);">Secures your reservation</div>
+            </div>
+            <a href="#contact" class="btn-primary" style="padding:0.65rem 1.25rem;font-size:0.7rem;">Reserve</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:3rem;">
+      <p style="font-size:0.85rem;color:var(--warm-gray);margin-bottom:1rem;">All puppies come with microchip, first vaccinations, deworming, 4-week obedience class, food & treats.</p>
+      <a href="#contact" class="btn-primary" style="background:var(--charcoal);">
+        Join Our Waitlist
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WHY US ══════════════════ -->
+<section id="why" style="padding: 7rem 0; background: var(--charcoal);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-end" style="margin-bottom:4.5rem;">
+      <div class="reveal">
+        <div class="section-label">The Von Ridens Difference</div>
+        <h2 class="section-title" style="color:white;">Why Families <em>Choose Us</em></h2>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p style="color:rgba(255,255,255,0.5);font-size:0.95rem;line-height:1.8;">
+          We don't just breed dogs — we build relationships. Every puppy that leaves 
+          our home carries our reputation, and we take that seriously.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div class="why-card reveal reveal-delay-1">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <div class="why-title">OFA Health Certified</div>
+        <p class="why-desc">Every parent dog is OFA certified for hips and elbows, and fully DM clear. We test so you don't have to guess.</p>
+      </div>
+
+      <div class="why-card reveal reveal-delay-2">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        </svg>
+        <div class="why-title">Home Raised, Hand Socialized</div>
+        <p class="why-desc">Our puppies grow up in our home, handled daily from birth. No kennel stress — just love, play, and safe exploration.</p>
+      </div>
+
+      <div class="why-card reveal reveal-delay-3">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        <div class="why-title">Free Obedience Training</div>
+        <p class="why-desc">Every puppy purchase includes a 4-week obedience class with our professional trainer — a $300 value, included.</p>
+      </div>
+
+      <div class="why-card reveal reveal-delay-1">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+        </svg>
+        <div class="why-title">Championship Bloodlines</div>
+        <p class="why-desc">Our breeding stock holds working and conformation titles. Beauty and drive — not a compromise, a standard.</p>
+      </div>
+
+      <div class="why-card reveal reveal-delay-2">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+          <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <div class="why-title">Perfect Match Placement</div>
+        <p class="why-desc">We spend time understanding your lifestyle before making a match. The right puppy for the right family — always.</p>
+      </div>
+
+      <div class="why-card reveal reveal-delay-3">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        <div class="why-title">Lifetime Breeder Support</div>
+        <p class="why-desc">Your relationship with us doesn't end at pickup. We're here for training questions, health advice, and life with your dog.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ TESTIMONIALS ══════════════════ -->
+<section id="testimonials" style="padding: 7rem 0; background: white;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center reveal" style="margin-bottom:4rem;">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-title">What Our <em>Families Say</em></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- T1 -->
+      <div class="testimonial-card reveal reveal-delay-1">
+        <span class="quote-mark">"</span>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          We drove 4 hours to pick up our boy, Titan, and it was worth every mile. 
+          He's the most intelligent, loving dog we've ever owned. The obedience class 
+          included was a game changer.
+        </p>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-top:auto;">
+          <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah M.">
+          <div>
+            <div class="reviewer-name">Sarah & Mark T.</div>
+            <div class="reviewer-loc">Seattle, WA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- T2 -->
+      <div class="testimonial-card reveal reveal-delay-2">
+        <span class="quote-mark">"</span>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          As a first-time German Shepherd owner, I was nervous. Von Ridens walked me 
+          through everything. Two years later, Freya is the pride of our neighborhood 
+          — healthy, trained, and absolutely beautiful.
+        </p>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="James K.">
+          <div>
+            <div class="reviewer-name">James K.</div>
+            <div class="reviewer-loc">Portland, OR</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- T3 -->
+      <div class="testimonial-card reveal reveal-delay-3">
+        <span class="quote-mark">"</span>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          I've had German Shepherds my whole life. Von Ridens puppies are simply 
+          the best I've ever seen. The temperament testing, the early socialization — 
+          it all shows. We're already reserved for our next puppy.
+        </p>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Linda R.">
+          <div>
+            <div class="reviewer-name">Linda & Ray H.</div>
+            <div class="reviewer-loc">Tacoma, WA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust bar -->
+    <div style="margin-top:4rem;padding:2rem;border:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-around;gap:1.5rem;" class="reveal">
+      <div style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--gold);">5.0</div>
+        <div style="color:var(--gold);font-size:1rem;margin:0.25rem 0;">★★★★★</div>
+        <div style="font-size:0.75rem;color:var(--warm-gray);">Google Rating</div>
+      </div>
+      <div style="width:1px;height:50px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--charcoal);">500+</div>
+        <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.25rem;">Puppies Placed</div>
+      </div>
+      <div style="width:1px;height:50px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--charcoal);">AKC</div>
+        <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.25rem;">Registered Breeder</div>
+      </div>
+      <div style="width:1px;height:50px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--charcoal);">25+</div>
+        <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.25rem;">Years Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GALLERY ══════════════════ -->
+<section id="gallery" style="padding: 7rem 0; background: var(--cream);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center reveal" style="margin-bottom:3rem;">
+      <div class="section-label">Life at Von Ridens</div>
+      <h2 class="section-title">A Glimpse Into Our <em>World</em></h2>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item g1">
+        <img src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=800&q=80" alt="German Shepherd">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item g2">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Puppy playing">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item g3">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600&q=80" alt="German Shepherd">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item g4">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Puppy">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item g5">
+        <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=600&q=80" alt="German Shepherd outdoors">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item g6">
+        <img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?w=600&q=80" alt="Dog with family">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item g7">
+        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600&q=80" alt="German Shepherd portrait">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:2.5rem;">
+      <p style="font-size:0.85rem;color:var(--warm-gray);">Follow our journey on Instagram <a href="#" style="color:var(--gold-dark);text-decoration:none;font-weight:500;">@vonridensgsd</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section id="contact" style="padding: 7rem 0; background: var(--charcoal);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-2 gap-16">
+
+      <!-- Left -->
+      <div class="reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title" style="color:white;margin-bottom:1.5rem;">
+          Ready to Find Your <em>Perfect Companion?</em>
+        </h2>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.95rem;line-height:1.8;margin-bottom:3rem;">
+          Whether you're ready to reserve a puppy, want to visit our dogs, 
+          or just have questions — we'd love to hear from you. All visitors welcome.
+        </p>
+
+        <div style="display:flex;flex-direction:column;gap:2rem;">
+          <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+            <div style="width:44px;height:44px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold);">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.25rem;">Location</div>
+              <div style="color:white;font-size:0.95rem;">Located in Port <br>Orchard Washington</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+            <div style="width:44px;height:44px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold);">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.25rem;">Email</div>
+              <div style="color:white;font-size:0.95rem;">lisaridens@wavecable.com</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+            <div style="width:44px;height:44px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold);">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.25rem;">Phone</div>
+              <div style="color:white;font-size:0.95rem;">(360)731-4884</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal reveal-delay-2">
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:2.5rem;">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:white;margin-bottom:2rem;">Send Us a Message</h3>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+            <div>
+              <label class="contact-label">First Name</label>
+              <input class="contact-input" type="text" placeholder="Jane">
+            </div>
+            <div>
+              <label class="contact-label">Last Name</label>
+              <input class="contact-input" type="text" placeholder="Smith">
+            </div>
+          </div>
+
+          <div style="margin-bottom:1rem;">
+            <label class="contact-label">Email Address</label>
+            <input class="contact-input" type="email" placeholder="jane@example.com">
+          </div>
+
+          <div style="margin-bottom:1rem;">
+            <label class="contact-label">Phone Number</label>
+            <input class="contact-input" type="tel" placeholder="(360) 555-0000">
+          </div>
+
+          <div style="margin-bottom:1rem;">
+            <label class="contact-label">I'm Interested In</label>
+            <select class="contact-input" style="cursor:pointer;appearance:none;">
+              <option value="">Select an option...</option>
+              <option>Available puppy</option>
+              <option>Joining the waitlist</option>
+              <option>Visiting your dogs</option>
+              <option>General question</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom:1.75rem;">
+            <label class="contact-label">Message</label>
+            <textarea class="contact-input" rows="4" placeholder="Tell us a little about yourself and what you're looking for..." style="resize:vertical;"></textarea>
+          </div>
+
+          <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleSubmit(event)">
+            Send Message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.25);margin-top:1rem;text-align:center;">We typically respond within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer style="padding: 4rem 0 2rem; background: #111110;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-4 gap-10" style="margin-bottom:3rem;">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="footer-logo" style="margin-bottom:1rem;">Von Ridens<br><span style="font-size:0.75rem;letter-spacing:0.2em;font-family:'Jost',sans-serif;font-weight:300;opacity:0.5;">GERMAN SHEPHERDS</span></div>
+        <p style="font-size:0.85rem;line-height:1.8;max-width:320px;margin-bottom:1.5rem;">
+          Premium German Shepherd puppies raised with love, expertise, and a deep commitment to excellence. Port Orchard, WA.
+        </p>
+        <div style="display:flex;gap:1rem;">
+          <a href="#" class="footer-link" style="width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color=''">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="footer-link" style="width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color=''">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <div>
+        <div style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.25rem;">Navigation</div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="#about" class="footer-link">About Us</a>
+          <a href="#puppies" class="footer-link">Available Puppies</a>
+          <a href="#why" class="footer-link">Our Promise</a>
+          <a href="#gallery" class="footer-link">Gallery</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div>
+        <div style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.25rem;">Information</div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="#" class="footer-link">AKC Registered</a>
+          <a href="#" class="footer-link">Health Guarantee</a>
+          <a href="#" class="footer-link">Waitlist Policy</a>
+          <a href="#" class="footer-link">Pickup Process</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.75rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;">
+      <p style="font-size:0.78rem;">© 2025 Von Ridens German Shepherds. All rights reserved.</p>
+      <p style="font-size:0.78rem;">Port Orchard, Washington</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Success toast -->
+<div id="toast" style="position:fixed;bottom:2rem;right:2rem;background:var(--charcoal);color:white;padding:1rem 1.5rem;border-left:3px solid var(--gold);font-size:0.85rem;transform:translateX(110%);transition:transform 0.4s ease;z-index:999;">
+  ✓ Message sent! We'll be in touch within 24 hours.
+</div>
+
+<script>
+  // ── Navbar scroll ──
+  const navbar = document.getElementById('navbar');
+  const navLogo = document.getElementById('nav-logo');
+  const navLinks = document.getElementById('nav-links');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      navbar.classList.add('scrolled');
+      navLogo.style.color = 'var(--charcoal)';
+      navLinks.style.color = 'var(--charcoal)';
+    } else {
+      navbar.classList.remove('scrolled');
+      navLogo.style.color = 'white';
+      navLinks.style.color = 'white';
+    }
+  });
+
+  // ── Mobile menu ──
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.add('open');
+  });
+  document.getElementById('close-menu').addEventListener('click', closeMobileMenu);
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+
+  // ── Scroll reveal ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Form submit ──
+  function handleSubmit(e) {
+    e.preventDefault();
+    const toast = document.getElementById('toast');
+    toast.style.transform = 'translateX(0)';
+    setTimeout(() => { toast.style.transform = 'translateX(110%)'; }, 4000);
+  }
+
+  // ── Smooth hover on nav links color when scrolled ──
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('mouseover', () => {});
+  });
+
+  // Hero parallax (subtle)
+  window.addEventListener('scroll', () => {
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg) {
+      heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>
